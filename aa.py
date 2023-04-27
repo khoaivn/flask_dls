@@ -4,8 +4,8 @@
 #     print(x)
 # for x in range(2, 30, 5):
 #     print(x)
-fruits = ['apple', 'banana', 'cherry']
-print(type(fruits))
+# fruits = ['apple', 'banana', 'cherry']
+# print(type(fruits))
 # for x in fruits:
 #     print(x)
 # for x in 'banana':
@@ -32,3 +32,13 @@ print(type(fruits))
 #     if (a % x == 0):
 #         so_uoc += 1
 # print("So uoc cua a la:", so_uoc)
+
+# i = 1
+# while i < 6:
+#     print(i)
+#     i += 1
+
+a = int(input("Nhap a:"))
+while a <= 0:
+    a = int(input("Nhap lai a:"))
+print("Ban nhap dung quy tac")    
