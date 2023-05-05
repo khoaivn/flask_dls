@@ -4,7 +4,7 @@
     <title>My Flask App</title>
 </head>
 <body>
-    <h1>Welcome to my Flask app!</h1>
+    <h1>Welcome to my Flask app {{ name }}!</h1>
     {% if name != 'aaa': %}
         <img src="{{ url_for('static', filename='images/sunny.webp') }}" alt="Girl in a jacket" width="100%">
     {% else %}
