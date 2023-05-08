@@ -8,7 +8,7 @@ app = Flask(__name__)
 def index():
 	name = "Pham Trung Dung"
 	response = get_json()
-	return render_template('index.html', name = name, response = response.json)
+	return render_template('index.html', name = name, response = response.json())
 	# return render_template('index_one_flight.html', name = name, response = response.json)
 
 def get_json():
