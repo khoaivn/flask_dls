@@ -68,9 +68,13 @@ tr:nth-child(even) {
 
 	</style>
 </head>
+
 <body>
 	<div id="header">
-		<h1>{{ response }}</h1>
+	
+			<h1>{{ name }}</h1>
+		
+		
 	</div>
 	<div id="content">
 		<form>
@@ -90,6 +94,15 @@ tr:nth-child(even) {
 				<th>Arrival</th>
 				<th>Status</th>
 			</tr>
+			{% for i in range(len_json) %}
+				<tr>
+					<td>{{ response[i]['iata_code'] }}</td>
+					<td>{{ response[i]['name'] }}</td>
+					<td>{{ response[i]['icao_code'] }}</td>
+					<td>12:00 PM</td>
+					<td>On Time</td>
+				</tr>
+			{% endfor %}
 			<tr>
 				<td>United Airlines</td>
 				<td>UA1234</td>

@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import requests
+import json
 
 app = Flask(__name__)
 
@@ -8,7 +9,10 @@ app = Flask(__name__)
 def index():
 	name = "Pham Trung Dung"
 	response = get_json()
-	return render_template('index.html', name = name, response = response.json())
+	len_json = len(response.json())
+
+
+	return render_template('index.html', name = name, response = response.json(), len_json = len_json)
 	# return render_template('index_one_flight.html', name = name, response = response.json)
 
 def get_json():
