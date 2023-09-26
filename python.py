@@ -1,24 +1,5 @@
-from flask import Flask, render_template
 import requests
 import json
-
-app = Flask(__name__)
-
-@app.route('/')
-
-def index():
-	name = "Pham Trung Dung"
-	response = get_json_flight_area()
-	
-	len_json = len(response.json()['flights'])
-	y = json.dumps(len_json)
-	print(y)
-
-
-
-	return render_template('index.html', name = name, response = response.json(), len_json = len_json)
-	# return render_template('index_one_flight.html', name = name, response = response.json)
-
 def get_json_flight_area():
 
 	url = "https://flight-data4.p.rapidapi.com/get_area_flights"
@@ -46,5 +27,8 @@ def get_json():
 	response = requests.get(url, headers=headers)
 	return response
 
-if __name__ == '__main__':
-	app.run(debug=True)
+response = get_json_flight_area()
+	
+len_json = len(response.json()['flights'])
+y = json.dumps(len_json)
+print(response.json())
