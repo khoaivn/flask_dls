@@ -27,8 +27,24 @@ def get_json():
 	response = requests.get(url, headers=headers)
 	return response
 
-response = get_json_flight_area()
+def get_flight_radar():
+	import requests
+
+	url = "https://flight-radar1.p.rapidapi.com/aircrafts/list"
+
+	headers = {
+		"X-RapidAPI-Key": "fa97e59c65mshccb0c63302d8440p13c575jsn4742b0fd94a2",
+		"X-RapidAPI-Host": "flight-radar1.p.rapidapi.com"
+	}
+
+	response = requests.get(url, headers=headers)
+
+	return (response.json())
+
+
+response = get_flight_radar()
+print (response)
 	
-len_json = len(response.json()['flights'])
-y = json.dumps(len_json)
-print(response.json())
+# len_json = len(response.json())
+# y = json.dumps(len_json)
+# print(response.json())
