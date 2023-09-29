@@ -8,6 +8,10 @@ def index():
     name = 'Pham Trung Dung'
     
     return render_template('index.html', name = name, ds_hangbay = ds_hangbay)
+@app.route('/get_input')
+def get_input():
+    
+    return render_template('get_input.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -72,7 +72,7 @@ tr:nth-child(even) {
 <body>
 	<div id="header">
 	
-			<h1>{{ name }}</h1>
+			<h1>{{ response }}</h1>
 		
 		
 	</div>
@@ -86,6 +86,7 @@ tr:nth-child(even) {
 			<input type="date" id="date" name="date">
 			<input type="submit" value="Search">
 		</form>
+		<p><a href="{{ url_for('get_input') }}">Check out this cool form!</a></p>
 		<table>
 			<tr>
 				<th>Airline</th>
@@ -94,19 +95,7 @@ tr:nth-child(even) {
 				<th>Arrival</th>
 				<th>Status</th>
 			</tr>
-			{% for i in range(len_json) %}
-				<tr>
-					{% if response['flights'][i]['airline'] == 'HVN' %}
-						<td>Vietnam Airlines</td>
-					{% else %}
-						<td>{{ response['flights'][i]['airline'] }}</td>
-					{% endif %}
-					<td>{{ response['flights'][i]['flight'] }}</td>
-					<td>{{ response['flights'][i]['departure'] }}</td>
-					<td>{{ response['flights'][i]['arrival'] }}</td>
-					<td>On Time</td>
-				</tr>
-			{% endfor %}
+
 			<tr>
 				<td>United Airlines</td>
 				<td>UA1234</td>
