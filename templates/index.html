@@ -95,6 +95,19 @@ tr:nth-child(even) {
 				<th>Arrival</th>
 				<th>Status</th>
 			</tr>
+			{% for i in range(len_json) %}
+				<tr>
+					{% if response['flights'][i]['airline'] == 'HVN' %}
+						<td>Vietnam Airlines</td>
+					{% else %}
+						<td>{{ response['flights'][i]['airline'] }}</td>
+					{% endif %}
+					<td>{{ response['flights'][i]['flight'] }}</td>
+					<td>{{ response['flights'][i]['departure'] }}</td>
+					<td>{{ response['flights'][i]['arrival'] }}</td>
+					<td>On Time</td>
+				</tr>
+			{% endfor %}
 
 			<tr>
 				<td>United Airlines</td>
