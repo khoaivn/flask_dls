@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thông tin tên máy bay</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+		/* Set background color for the page */
+body {
+	background-color: #f1f1f1;
+	font-family: Arial, sans-serif;
+}
+
+/* Style the header */
+#header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+}
+
+/* Style the search form */
+form {
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+}
+
+label {
+	margin-right: 10px;
+}
+
+input[type="text"], input[type="date"] {
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0px 0px 5px #ccc;
+}
+
+input[type="submit"] {
+	background-color: #333;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+}
+
+/* Style the table */
+table {
+	margin-top: 20px;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	padding: 10px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+th {
+	background-color: #333;
+	color: #fff;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+</style>
+</head>
+
+<body>
+	<div id="header">
+	
+			<h1>Thông tin máy bay</h1>
+		
+	</div>
+	<div id="content">
+		<form method="POST">
+			<input placeholder= "Nhập tên máy bay" type="text" id="from" name="from">
+			<input type="submit" value="Tìm kiếm">
+		</form>
+		
+		<table>
+			<tr>
+				<th>Tên dòng máy bay</th>
+				<th>Tên máy bay</th>
+				<th>Mã</th>
+				<th></th>
+				<th></th>
+			</tr>
+			
+		
+			{% for i in range(0, 30): %}
+			{% if text in data["rows"][i]["description"].upper(): %}
+			<tr>
+				<td>{{ data["rows"][i]["description"] }}</td>
+				<td>{{ data["rows"][i]["models"][0]["Name"] }}</td>
+				<td>{{ data["rows"][i]["models"][0]["Code"] }}</td>
+				<td></td>
+				<td></td>
+			</tr>
+			{% endif %}
+			{% endfor %}
+
+			<!-- More rows here -->
+		</table>
+	</div>
+</body>
+</html>
